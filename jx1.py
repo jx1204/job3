@@ -32,10 +32,7 @@ def paint(list11=[],list22=[]):
     plt.scatter(list11,list22)
     plt.show()
 
-
-
 #排序
-
 
 def sort(list11=[],list22=[]):
     win1 = tkinter.Toplevel()
@@ -65,7 +62,6 @@ def solve(c1,s=[],y=[]):
     win1.geometry('+%d+%d' % ((sw - 500) / 2, (sh - 300) / 2))
     n=len(list11)
     import datetime
-
     starttime = datetime.datetime.now()
     n=len(list11)
     list11.insert(0,0)
