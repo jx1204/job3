@@ -25,17 +25,13 @@ def find(result=[]):
 
 #绘制散点图
 
-
 def paint(list11=[],list22=[]):
     import numpy as np
     import matplotlib.pyplot as plt
     plt.scatter(list11,list22)
     plt.show()
 
-
-
 #排序
-
 
 def sort(list11=[],list22=[]):
     win1 = tkinter.Toplevel()
@@ -52,8 +48,7 @@ def sort(list11=[],list22=[]):
         
     tkinter.messagebox.showinfo("按照性价比的非递增排序",list4)
     win1.destroy()
-
-    
+   
 #选择算法
 
 def solve(c1,s=[],y=[]):
@@ -90,7 +85,6 @@ def solve(c1,s=[],y=[]):
             
     x33="背包能装的最大价值是："+str(f[n][c1])
 
-
     j=c1
     for i in range(n,0,-1):
         if f[i][j]>f[i-1][j]:
@@ -105,7 +99,6 @@ def solve(c1,s=[],y=[]):
     tkinter.messagebox.showinfo("动态规划算法",x31)
     win1.destroy()
 
-
 if __name__ == '__main__':
     def secondMain():
         
@@ -117,8 +110,7 @@ if __name__ == '__main__':
         a='The profit of items are:'
         b='The weight of items are:'
         d='the cubage of knapsack is'
-
-            
+       
         file1=open("y1.txt",'w')
         file2=open("y3.txt",'w')
         l1=[]
@@ -196,8 +188,6 @@ if __name__ == '__main__':
     c = conn.cursor()
     c.execute("create table bp(weight char(10),value char(20))")
     
-   
- 
     # 设置窗口位置
     win = tkinter.Tk()
     win.title('D{0-1}背包问题')
@@ -222,8 +212,6 @@ if __name__ == '__main__':
     ph = tkinter.Entry(win, textvariable=nu)
     ph.place(relx=0.78, rely=0.28, width=140)
 
-
-    
     # 单选按钮
     choose = [('1.进行数据的查询',1),('2.绘制数据散点图',2),('3.对数据进行排序',3),('4.选择算法来求解',4)]
     v = tkinter.IntVar()
@@ -240,6 +228,3 @@ if __name__ == '__main__':
     b2.place(relx=1, rely=1, anchor='se')
     
 win.mainloop()
-
-     
-
