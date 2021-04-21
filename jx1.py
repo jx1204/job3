@@ -51,7 +51,7 @@ def sort(list11=[],list22=[]):
    
 #选择算法
 
-def solve(c1,s=[],y=[]):
+def solve(c1,list11=[],list22=[]):
     win1 = tkinter.Toplevel()
     win1.title('算法结果')
     win1.geometry('500x300')
