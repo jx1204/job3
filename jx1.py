@@ -2,15 +2,13 @@ import tkinter
 import tkinter.messagebox
 import _sqlite3
 
-#idkp1-10.txt
-
-#查询
 list11=[]
 list22=[]
 result=[]
 c1=0
 max_last = 0
 
+#查询
 
 def find(result=[]):
     win1 = tkinter.Toplevel()
@@ -19,7 +17,6 @@ def find(result=[]):
     sw = win1.winfo_screenwidth()
     sh = win1.winfo_screenheight()
     win1.geometry('+%d+%d' % ((sw - 500) / 2, (sh - 300) / 2))
-
     tkinter.messagebox.showinfo("结果如下",result)
     win1.destroy()
 
@@ -44,8 +41,7 @@ def sort(list11=[],list22=[]):
     for i in range(2,len(list11)+1):
         if i%3==0:
             list4.append(round(int(list11[i-1])/int(list22[i-1]),3))
-    list4.sort(reverse=True)
-        
+    list4.sort(reverse=True)    
     tkinter.messagebox.showinfo("按照性价比的非递增排序",list4)
     win1.destroy()
    
@@ -81,10 +77,8 @@ def solve(c1,s=[],y=[]):
             if j<int(list11[i]):
                 f[i][j]=f[i-1][j]
             else:
-                f[i][j]=max(f[i-1][j],f[i-1][j-int(list11[i])]+int(list22[i]));
-            
+                f[i][j]=max(f[i-1][j],f[i-1][j-int(list11[i])]+int(list22[i]))          
     x33="背包能装的最大价值是："+str(f[n][c1])
-
     j=c1
     for i in range(n,0,-1):
         if f[i][j]>f[i-1][j]:
@@ -100,8 +94,7 @@ def solve(c1,s=[],y=[]):
     win1.destroy()
 
 if __name__ == '__main__':
-    def secondMain():
-        
+    def secondMain():        
         n=name.get()
         p1=ph.get()
         p=int(p1)
@@ -195,7 +188,6 @@ if __name__ == '__main__':
     sw = win.winfo_screenwidth()
     sh = win.winfo_screenheight()
     win.geometry('+%d+%d'%((sw-500)/2,(sh-300)/2))
-    # 欢迎语
     l = tkinter.Label(win,text='欢迎进入D{0-1}KP实例数据集算法实验平台',font=('华文行楷',24),fg='green')
     l.place(relx=0.5,rely=0.1,anchor='center')
 
@@ -205,6 +197,7 @@ if __name__ == '__main__':
     nu = tkinter.StringVar()
     name = tkinter.Entry(win, textvariable=nu)
     name.place(relx=0.26, rely=0.28, width=90)
+    
     # 选择第几组数据
     Lph = tkinter.Label(win, text='第几组数据（0-9）',font=('华文行楷',20),fg='green')
     Lph.place(relx=0.7, rely=0.3, anchor='center')
@@ -226,5 +219,6 @@ if __name__ == '__main__':
     b.place(relx=0,rely=1,anchor='sw')
     b2 = tkinter.Button(win, text='退出', width=10, height=3,bg='gray',command=win.quit)
     b2.place(relx=1, rely=1, anchor='se')
+
     
 win.mainloop()
